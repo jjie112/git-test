@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            background-color: #000;
+            font-size: 0;
+        }
+
+        /* vertical-align 只能對 inline、inline-block 或 img 元素生效，block 無效 */
+        img {
+            /* 可以消除 img 底部空白，baseline 以外值都可以消除 */
+            vertical-align: middle;
+        }
+
+        .pow {
+            /* vertical-align: super; */
+            /* 也可以用 px 微調垂直上下的位置 */
+            vertical-align: 10px;
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="https://picsum.photos/300/200/?random=10">
+        <img src="https://picsum.photos/300/200/?random=10">
+        <img src="https://picsum.photos/300/200/?random=10">
+    </div>
+
+    <hr>
+
+    <div style="background:deeppink;font-size:1rem;">
+        <span>X</span><span class="pow">2</span>
+    </div>
+
+</body>
+
+</html>

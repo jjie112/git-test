@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國立科技高中─校園社團介紹網</title>
+
+    <style>
+        /* 塊級元素設定寬 + margin: auto => 水平置中 */
+        #main {
+            width: 1024px;
+            height: 768px;
+            margin: auto;
+            /* background: lightblue; */
+        }
+
+        #top {
+            width: 1000px;
+            height: 65px;
+            /* 讓它不要靠左 */
+            margin: auto;
+            /* background: lightcoral; */
+        }
+
+        #left {
+            width: 215px;
+            /* calc 運算符號左右一定要留空白 */
+            height: calc(768px - 65px - 20px);
+            /* 浮動左側 */
+            float: left;
+            /* 左邊對齊(1024px-1000px = 24xp(兩邊) / 2 = 12px(一邊)) */
+            margin-left: 12px;
+            /* background: lightgreen; */
+        }
+
+        #menu {
+            width: 215px;
+            height: calc(768px - 65px - 20px - 25px);
+            /* background: yellow; */
+        }
+
+        #menu div {
+            font-family: '標楷體';
+            font-size: 24px;
+            font-weight: 500;
+            text-decoration: underline;
+            text-align: center;
+            color: #FF00FF;
+        }
+
+        #menu td {
+            width: 215px;
+            height: 40px;
+            text-align: center;
+            font-family: '標楷體';
+            color: #000000;
+            font-size: 16px;
+            background: url("images/menu1.png") no-repeat center;
+        }
+
+        /* 這邊可以不做，但是使用者體驗會更好 */
+        #menu td a {
+            /* 讓 a 佔滿 td 的寬跟高 */
+            /* 寬 */
+            display: block;
+            /* 高 */
+            line-height: 40px;
+        }
+
+        #menu td:hover {
+            background: url("images/menu2.png") no-repeat center;
+        }
+
+        #update {
+            width: 215px;
+            height: 25px;
+            /* background: red; */
+            font-family: '標楷體';
+            color: #000000;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #right {
+            width: 770px;
+            height: calc(768px - 65px - 20px);
+            float: right;
+            margin-right: 12px;
+            /* background: purple; */
+        }
+
+        #right marquee {
+            width: 770px;
+            height: 29px;
+            font-family: '標楷體';
+            font-size: 24px;
+            color: #0000FF;
+            /* 不影響考試，可以消除 marquee 底部的空白 */
+            vertical-align: middle;
+        }
+
+        /* #right iframe = iframe，#iframe 錯誤 */
+        #right iframe {
+            width: 770px;
+            height: calc(768px - 65px - 29px - 20px);
+        }
+
+        #footer {
+            width: 1000px;
+            height: 20px;
+            margin: auto;
+            /* 清除浮動(因為跑到上面去了) */
+            clear: both;
+            /* background: skyblue; */
+            font-family: '標楷體';
+            color: #000000;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <!-- 有替代文字 alt 的地方 title 也加上去，避免爭議 -->
+        <div id="top">
+            <a href="./index.html"><img src="./images/logo.png" alt="國立科技高中校園社團介紹網" title="國立科技高中校園社團介紹網"></a>
+        </div>
+        <div id="left">
+            <div id="menu">
+                <div>社團介紹</div>
+                <!-- table>tr*6>td -->
+                <table>
+                    <tr>
+                        <!-- 要有 target="iframe" (iframe 是名稱) 點下去才能顯示在 iframe頁框 -->
+                        <td><a href="./guitar_history.html" target="iframe">吉他社</a></td>
+                    </tr>
+                    <tr>
+                        <td>熱舞社</td>
+                    </tr>
+                    <tr>
+                        <td>棒球社</td>
+                    </tr>
+                    <tr>
+                        <td>羽球社</td>
+                    </tr>
+                    <tr>
+                        <td>足球社</td>
+                    </tr>
+                    <tr>
+                        <td>童軍社</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="update">最近更新日期：2025/11/14</div>
+        </div>
+        <div id="right">
+            <!-- marquee 標籤 要背 -->
+            <marquee>歡迎光臨校園社團介紹網，參觀後請支持社團活 動並熱烈參與</marquee>
+            <!-- 五題都有 iframe，預設頁都是 main.html -->
+            <!-- 五題 iframe 的名稱都叫 iframe -->
+            <iframe src="./main.html" frameborder="0" name="iframe"></iframe>
+        </div>
+        <div id="footer">網頁設計及維護：XX邱俊傑</div>
+    </div>
+</body>
+
+</html>
